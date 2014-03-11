@@ -28,3 +28,13 @@ if (isset($_GET['optimizer'])) {
         echo "cleared optimizer cache (ZendOptimizerPlus)...";
     }
 }
+
+if (isset($_GET['xcache'])) {
+
+    if (extension_loaded('XCache Cacher')) {
+        xcache_clear_cache(XC_TYPE_PHP);
+        xcache_clear_cache(XC_TYPE_VAR);
+        echo "cleared xcache cache...";
+    }
+}
+
